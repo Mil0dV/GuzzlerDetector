@@ -7,6 +7,8 @@ import { RootTabScreenProps } from '../types';
 
 import { ApiClient, RecognizeApi } from 'cloudmersive-image-api-client'
 
+import { Consumer } from 'soda-js'
+
 export default function TabOneScreen({ navigation }: RootTabScreenProps<'TabOne'>) {
   return (
     <View>
@@ -76,4 +78,23 @@ function lookupLicencePlate() {
   
     apiInstance.recognizeDetectVehicleLicensePlates(imageFile, callback)
 
+}
+
+function lookupEnvironmentalData(licenseplate) {
+
+  // if licenseplate has -'s:
+  licenseplate = licenseplate.replace('-', '')
+
+  var consumer = new Consumer('opendata.rdw.nl')
+
+  consumer.query()
+    .withDataset('8ys7-d773')
+
+    // for testing
+    // .where({ kenteken: 'V477LJ' })
+    .where({ kenteken: licenseplate })
+
+    .getRows()
+    .on('success', function(rows) { console.log(rows) })
+    .on('error', function(error) { console.error(error) })
 }

@@ -10,13 +10,13 @@ import { ApiClient, RecognizeApi } from 'cloudmersive-image-api-client'
 export default function TabOneScreen({ navigation }: RootTabScreenProps<'TabOne'>) {
   return (
     <View>
-    <View style={styles.container}>
-    <TouchableOpacity onPress={lookupLicencePlate} style={styles.helpLink}>
-      <Text style={styles.title}>GuzzlerDetectorKnop</Text>
-      </TouchableOpacity>
-      <View style={styles.separator} lightColor="#eee" darkColor="rgba(255,255,255,0.1)" />
-      <EditScreenInfo path="/screens/TabOneScreen.tsx" />
-    </View>
+      <View style={styles.container}>
+      <TouchableOpacity onPress={lookupLicencePlate} style={styles.helpLink}>
+        <Text style={styles.title}>GuzzlerDetectorKnop</Text>
+        </TouchableOpacity>
+        <View style={styles.separator} lightColor="#eee" darkColor="rgba(255,255,255,0.1)" />
+        <EditScreenInfo path="/screens/TabOneScreen.tsx" />
+      </View>
 
     {/* <View style={styles.helpContainer}>
         <TouchableOpacity onPress={lookupLicencePlate} style={styles.helpLink}>

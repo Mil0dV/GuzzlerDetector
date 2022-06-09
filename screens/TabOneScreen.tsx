@@ -11,20 +11,19 @@ export default function TabOneScreen({ navigation }: RootTabScreenProps<'TabOne'
   return (
     <View>
       <View style={styles.container}>
-      <TouchableOpacity onPress={lookupLicencePlate} style={styles.helpLink}>
-        <Text style={styles.title}>GuzzlerDetectorKnop</Text>
-        </TouchableOpacity>
+        <Text style={styles.title}>GuzzlerDetector</Text>
         <View style={styles.separator} lightColor="#eee" darkColor="rgba(255,255,255,0.1)" />
         <EditScreenInfo path="/screens/TabOneScreen.tsx" />
       </View>
 
-    {/* <View style={styles.helpContainer}>
+    <View style={styles.helpContainer}>
+      {/* het lijkt erop dat de lookup wel gebeurt, maar geen idee hoe de gereturnde data te tonen.*/}
         <TouchableOpacity onPress={lookupLicencePlate} style={styles.helpLink}>
           <Text style={styles.helpLinkText} lightColor={Colors.light.tint}>
-            Tap here if your app doesn't automatically update after making changes
+            Tap hier om het kenteken te lookuppen
           </Text>
         </TouchableOpacity>
-    </View> */}
+    </View>
     </View>
   );
 }
@@ -75,6 +74,6 @@ function lookupLicencePlate() {
         'API called successfully. Returned data: ' + data)
       }}
   
-      apiInstance.recognizeDetectVehicleLicensePlates(imageFile, callback)
+    apiInstance.recognizeDetectVehicleLicensePlates(imageFile, callback)
 
 }

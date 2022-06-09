@@ -1,0 +1,10 @@
+{
+  "devToolsPort": 19002,
+  "expoServerPort": 19000,
+  "packagerPort": 19000,
+  "expoServerNgrokUrl": "https://4a-2uv.anonymous.regdetect.exp.direct",
+  "packagerNgrokUrl": "https://4a-2uv.anonymous.regdetect.exp.direct",
+  "ngrokPid": 31408,
+  "packagerPid": null,
+  "webpackServerPort": null
+}
